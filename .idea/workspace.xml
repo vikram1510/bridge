@@ -4,7 +4,10 @@
     <bookmark url="file://$PROJECT_DIR$/app.js" line="9" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6cdf06c4-106a-4f26-b4a9-8af1ebc625c3" name="Default" comment="" />
+    <list default="true" id="6cdf06c4-106a-4f26-b4a9-8af1ebc625c3" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/js/game.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/js/game.js" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -58,7 +61,7 @@
         <entry file="file://$PROJECT_DIR$/client/js/game.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="68">
-              <caret line="4" column="21" selection-start-line="4" selection-start-column="21" selection-end-line="4" selection-end-column="21" />
+              <caret line="4" column="22" selection-start-line="4" selection-start-column="22" selection-end-line="4" selection-end-column="22" />
             </state>
           </provider>
         </entry>
@@ -85,6 +88,9 @@
       <replace>message</replace>
       <replace>class=&quot;card_div&quot; id=&quot;div_card</replace>
     </replaceStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -128,19 +134,8 @@
         <subPane>
           <expand>
             <path>
-              <item name="project1" type="b2602c69:ProjectViewProjectNode" />
-              <item name="project1" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="project1" type="b2602c69:ProjectViewProjectNode" />
-              <item name="project1" type="462c0819:PsiDirectoryNode" />
-              <item name="client" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="project1" type="b2602c69:ProjectViewProjectNode" />
-              <item name="project1" type="462c0819:PsiDirectoryNode" />
-              <item name="client" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
+              <item name="bridge_git" type="b2602c69:ProjectViewProjectNode" />
+              <item name="bridge_git" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -197,10 +192,10 @@
     <frame x="-7" y="-7" width="1295" height="695" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24980484" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.27556595" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
-      <window_info anchor="bottom" id="Version Control" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info anchor="bottom" id="Python Console" order="7" />
       <window_info anchor="bottom" id="Run" order="2" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -572,7 +567,7 @@
     <entry file="file://$PROJECT_DIR$/client/js/game.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
-          <caret line="4" column="21" selection-start-line="4" selection-start-column="21" selection-end-line="4" selection-end-column="21" />
+          <caret line="4" column="22" selection-start-line="4" selection-start-column="22" selection-end-line="4" selection-end-column="22" />
         </state>
       </provider>
     </entry>
