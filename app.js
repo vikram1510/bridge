@@ -40,8 +40,8 @@ io.sockets.on('connection', function(socket) {
     });
 
     socket.on('apple',
-        function(size){
-            console.log(size.penis);
+        function(quality){
+            console.log(quality.taste);
         }
     );
 });
