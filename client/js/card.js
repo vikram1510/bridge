@@ -1,3 +1,7 @@
+
+
+
+
 function card(suit,number) {
   // Card Render
 
@@ -20,7 +24,11 @@ function card(suit,number) {
   }
 
   this.played = false;
-}
+
+  this.moveCard = function() {
+    console.log("Test")
+  };
+};
 
 card.prototype.moveCard = function() {
   // console.log("Moved Card");
@@ -29,4 +37,4 @@ card.prototype.moveCard = function() {
   if (this.xPos > 500) {
     this.xPos = 10;
   }
-}
+};
