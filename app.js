@@ -30,7 +30,7 @@ io.sockets.on('connection', function(socket) {
       var i = allClients.indexOf(socket);
       allClients.splice(i, 1);
    });
-	 
+
    if (total_connections<4){
        io.sockets.emit('newplayer', {hello: 'Nello'})
    } else {io.sockets.emit('toomanyplayers', {hello: 'Yello'})}
