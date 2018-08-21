@@ -1,9 +1,24 @@
+
+var myCards;
+
+
+function setup() {
+createCanvas(300, 300);
+background(130);
+
+
 var socket = io.connect();
-var apple = 1;
-socket.emit('apple',
-    {
-        penis: 'commit'
-    }
-);
 
 
+}
+
+
+
+
+
+
+
+
+function draw() {
+
+}

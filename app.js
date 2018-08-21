@@ -30,6 +30,7 @@ io.sockets.on('connection', function(socket) {
       var i = allClients.indexOf(socket);
       allClients.splice(i, 1);
    });
+	 
    if (total_connections<4){
        io.sockets.emit('newplayer', {hello: 'Nello'})
    } else {io.sockets.emit('toomanyplayers', {hello: 'Yello'})}
@@ -39,10 +40,4 @@ io.sockets.on('connection', function(socket) {
         console.log(player.team);
     });
 
-    socket.on('apple',
-        function(size){
-            console.log(size.penis);
-        }
-    );
 });
-
