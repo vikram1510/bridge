@@ -7,7 +7,7 @@ background(130);
 
 console.log("Hello");
 
-gamecard = new card("J","heartsuit");
+gamecard = new card("clubsuit","J");
 
 
 

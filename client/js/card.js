@@ -15,26 +15,35 @@ function card(suit,number) {
   this.number = number;
 
   // Set Color
-  if (suit == "spadesuit" | "clubsuit" | "blackjoker") {
+  if (suit == "spadesuit" ||
+      suit == "clubsuit"  ||
+      suit == "blackjoker") {
+
     this.color = "black";
-  } else if (suit == "heartsuit" | "diamondsuit" | "redjoker") {
+
+  } else if (suit == "heartsuit" ||
+             suit == "diamondsuit" ||
+             suit == "redjoker") {
+
     this.color = "red"
+
   } else {
     this.color = "notset" // Deal with setting colours for joker
   }
 
   this.played = false;
 
-  this.moveCard = function() {
-    console.log("Test")
-  };
+  // this.moveCard = function() {
+  //   console.log("Test")
+  // };
 };
 
-card.prototype.moveCard = function() {
-  // console.log("Moved Card");
-  this.xPos = this.xPos + 10;
-
-  if (this.xPos > 500) {
-    this.xPos = 10;
-  }
-};
+// prototype method
+// card.prototype.moveCard = function() {
+//   // console.log("Moved Card");
+//   this.xPos = this.xPos + 10;
+//
+//   if (this.xPos > 500) {
+//     this.xPos = 10;
+//   }
+// };
