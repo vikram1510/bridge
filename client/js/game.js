@@ -9,8 +9,6 @@ console.log("Hello");
 
 gamecard = new card("clubsuit","J");
 
-
-
 var socket = io.connect();
 
 

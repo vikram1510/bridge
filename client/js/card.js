@@ -1,42 +1,61 @@
+function card(tempSuit,tempNumber) {
 
+  this.played = false;
+  this.selected = true;
 
+  const suit = tempSuit;
+  const number = tempNumber;
 
-
-function card(suit,number) {
-  // Card Render
-
-  // temp for rect
-  this.xPos = 10;
-  this.yPos = 10;
-  this.width = 30;
-  this.height = 60;
-
-  this.suit = suit;
-  this.number = number;
+  let tempcolor;
 
   // Set Color
   if (suit == "spadesuit" ||
       suit == "clubsuit"  ||
       suit == "blackjoker") {
 
-    this.color = "black";
+    tempcolor = "black";
 
   } else if (suit == "heartsuit" ||
              suit == "diamondsuit" ||
              suit == "redjoker") {
 
-    this.color = "red"
+    tempcolor = "red";
 
   } else {
-    this.color = "notset" // Deal with setting colours for joker
+    tempcolor = "notset";
   }
 
-  this.played = false;
+  const color = tempcolor;
 
-  // this.moveCard = function() {
-  //   console.log("Test")
-  // };
+// Getters
+
+  Object.defineProperty(this,'CardProp', {
+  get: function() {
+    return {
+      suit: suit,
+      number: number,
+      color: color
+    };
+  }
+  });
+
 };
+
+
+let JHearts = new card("heartsuit","J");
+
+console.log(JHearts);
+
+console.log("Printed");
+
+
+
+
+
+
+
+
+
 
 // prototype method
 // card.prototype.moveCard = function() {
