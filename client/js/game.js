@@ -1,23 +1,28 @@
 
-var gamecard;
-
 function setup() {
-createCanvas(300, 300);
-background(130);
+createCanvas(600, 300);
+background(200);
 
 console.log("Hello");
 
-gamecard = new card("clubsuit","J");
-
 var socket = io.connect();
 
+socket.on('signInResponse',function(dataPack) {
+  if (dataPack.connected) {
+    console.log(dataPack.myCards);
+    console.log("waiting for more players");
+  } else {
+    console.log("Cannot connect")
+  }
+});
 
+socket.on('readyToPlay', function(data) {
+  if (data.ready) {
+    console.log('ready to play!')
+  }
+});
 
 }
-
-
-
-
 
 
 

@@ -13,34 +13,257 @@
         #team {height: 100px; margin: auto;}
         h3 {  display: inline-block;}
     </style>
+    <style>
+        #full-page {width:800px; margin:0 auto;}
+        #message {height: 100px;}
+        #message h1 {line-height:2.5;}
+        #game-table {height:500px; width:500px;}
+        .sidenav {
+            width: 150px;
+            position: fixed;
+            z-index: 1;
+            top: 20px;
+            left: 10px;
+            overflow-x: hidden;
+            background-color:#1C2833;
+
+        }
+        .sidenav a {
+            padding: 6px 8px 6px 16px;
+            text-decoration: none;
+            font-size: 35px;
+            color: #2196F3;
+            display: block;
+        }
+        label.card_label{
+            font-size: 16px;
+            color: red;
+        }
+        div.card_div{
+            text-align:center;
+            border-style: groove;
+            background-color: white;
+        }
+        .btn.btn-success {
+            border-radius: 0;
+         }
+         div.playerCard{
+            background-color:white;
+            border-style:groove;
+            height:50px;
+         }
+    </style>
 </head>
 <body>
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
 
-<div id="page">
+<div id="loginpage">
     <div id="header">
         <h1>Bridge</h1>
     </div>
     <div id="game">
-        <form>
-            <div id="team">
+        <form id="signInForm">
+            <div>
                 <h3 >Team</h3>
-                <select class="form-control form-control-lg">
+                <select class="form-control form-control-lg" id="teamname">
                   <option>Team A</option>
                   <option>Team B</option>
                 </select>
             </div>
+            <p>
             <div>
                 <h3>Name</h3>
                 <input id="playername" class="form-control" type="text">
             </div>
-            <div id="play"><a class="btn btn-success btn-block" > Play Game </a></div>
+            <p>
+            <div id="playbtn"><a class="btn btn-success btn-block" >Play Game</a></div>
         </form>
     </div>
     <div>
 
     </div>
+</div>
+
+<div id="full-page" style=display:none>
+    <div id="message">
+        <h1 id="heading"><font color="red">&heartsuit;</font> BRIDGE GAME &spadesuit;</h1>
+    </div>
+    <div id="my-cards" class="sidenav">
+        <div align="center"><b><font color="white" size="5">CARDS</font></b></div>
+        <div class="card_div" id="div_card1" class="checkbox">
+          <label id="label_card1" class="card_label"><input id="input_card1" style="width:30px;" type="checkbox" class="styled">J&heartsuit;</label>
+        </div>
+        <div class="card_div" id="div_card2"/class="radio">
+          <label id="label_card2" class="card_label"><input id="input_card2" style="width:30px;" type="checkbox">J&heartsuit;</label>
+        </div>
+        <div class="card_div" id="div_card3"/class="radio">
+          <label id="label_card3" class="card_label"><input id="input_card3" style="width:30px;" type="checkbox">J&heartsuit;</label>
+        </div>
+        <div class="card_div" id="div_card4"/class="radio">
+          <label id="label_card4" class="card_label"><input id="input_card4" style="width:30px;" type="checkbox">J&heartsuit;</label>
+        </div>
+        <div class="card_div" id="div_card5"/class="radio">
+          <label id="label_card5" class="card_label"><input id="input_card5" style="width:30px;" type="checkbox">J&heartsuit;</label>
+        </div>
+        <div class="card_div" id="div_card6"/class="radio">
+          <label id="label_card6" class="card_label"><input id="input_card6" style="width:30px;" type="checkbox">J&heartsuit;</label>
+        </div>
+        <div class="card_div" id="div_card7"/class="radio">
+          <label id="label_card7" class="card_label"><input id="input_card7" style="width:30px;" type="checkbox">J&heartsuit;</label>
+        </div>
+        <div class="card_div" id="div_card8"/class="radio">
+          <label id="label_card8" class="card_label"><input id="input_card8" style="width:30px;" type="checkbox">J&heartsuit;</label>
+        </div>
+        <div class="card_div" id="div_card9"/class="radio">
+          <label id="label_card9" class="card_label"><input id="input_card9" style="width:30px;" type="checkbox">J&heartsuit;</label>
+        </div>
+        <div class="card_div" id="div_card10"/class="radio">
+          <label id="label_card10" class="card_label"><input id="input_card10" style="width:30px;" type="checkbox">J&heartsuit;</label>
+        </div>
+        <div class="card_div" id="div_card11"/class="radio">
+          <label id="label_card11" class="card_label"><input id="input_card11" style="width:30px;" type="checkbox">J&heartsuit;</label>
+        </div>
+        <div class="card_div" id="div_card12"/class="radio">
+          <label id="label_card12" class="card_label"><input id="input_card12" style="width:30px;" type="checkbox">J&heartsuit;</label>
+        </div>
+        <div class="card_div" id="div_card13"/class="radio">
+          <label id="label_card13" class="card_label"><input id="input_card13" style="width:30px;" type="checkbox">J&heartsuit;</label>
+        </div>
+        <div><button class="btn btn-success btn-block"> Play </button></div>
+    </div>
+    <div>
+        <div class="container-fluid">
+        <div class="row" style="height:30px;">
+            <div class="col-sm-12" style="background-color:yellow"></div>
+        </div>
+          <div class="row">
+            <div id="player1_card1" class="col-sm-1 playerCard"></div>
+            <div id="player1_card2" class="col-sm-1 playerCard"></div>
+            <div id="player1_card3" class="col-sm-1 playerCard"></div>
+            <div id="player1_card4" class="col-sm-1 playerCard"></div>
+            <div id="player1_card5" class="col-sm-1 playerCard"></div>
+            <div id="player1_card6" class="col-sm-1 playerCard"></div>
+            <div id="player1_card7" class="col-sm-1 playerCard"></div>
+            <div id="player1_card8" class="col-sm-1 playerCard"></div>
+            <div id="player1_card9" class="col-sm-1 playerCard"></div>
+            <div id="player1_card10" class="col-sm-1 playerCard"></div>
+            <div id="player1_card11" class="col-sm-1 playerCard"></div>
+            <div id="player1_card12" class="col-sm-1 playerCard"></div>
+          </div>
+
+
+        <div class="row" style="height:30px;">
+            <div class="col-sm-2" style="background-color:yellow"></div>
+            <div class="col-sm-8" style="background-color:lavender"></div>
+            <div class="col-sm-2" style="background-color:blue"></div>
+        </div>
+
+          <div class="row">
+            <div id="player4_card1" class="col-sm-1 playerCard">1</div>
+            <div id="player4_card2" class="col-sm-1 playerCard">2 &heartsuit;</div>
+            <div class="col-sm-1"></div>
+            <div class="col-sm-1 "></div>
+            <div class="col-sm-1 "></div>
+            <div class="col-sm-1 "></div>
+            <div class="col-sm-1 "></div>
+            <div class="col-sm-1 "></div>
+            <div class="col-sm-1 "></div>
+            <div class="col-sm-1 "></div>
+            <div id="player2_card1" class="col-sm-1 playerCard"></div>
+            <div id="player2_card2" class="col-sm-1 playerCard"></div>
+          </div>
+          <div class="row">
+            <div id="player4_card3" class="col-sm-1 playerCard">1</div>
+            <div id="player4_card4" class="col-sm-1 playerCard">2 &heartsuit;</div>
+            <div class="col-sm-1"></div>
+            <div class="col-sm-1 "></div>
+            <div class="col-sm-1 "></div>
+            <div class="col-sm-1 "></div>
+            <div class="col-sm-1 "></div>
+            <div class="col-sm-1 "></div>
+            <div class="col-sm-1 "></div>
+            <div class="col-sm-1 "></div>
+            <div id="player2_card3" class="col-sm-1 playerCard"></div>
+            <div id="player2_card4" class="col-sm-1 playerCard"></div>
+          </div>
+          <div class="row">
+            <div id="player4_card5" class="col-sm-1 playerCard">1</div>
+            <div id="player4_card6" class="col-sm-1 playerCard">2 &heartsuit;</div>
+            <div class="col-sm-1"></div>
+            <div class="col-sm-1 "></div>
+            <div class="col-sm-1 "></div>
+            <div class="col-sm-1 "></div>
+            <div class="col-sm-1 "></div>
+            <div class="col-sm-1 "></div>
+            <div class="col-sm-1 "></div>
+            <div class="col-sm-1 "></div>
+            <div id="player2_card5" class="col-sm-1 playerCard"></div>
+            <div id="player2_card6" class="col-sm-1 playerCard"></div>
+          </div>
+          <div class="row">
+            <div id="player4_card7" class="col-sm-1 playerCard">1</div>
+            <div id="player4_card8" class="col-sm-1 playerCard">2 &heartsuit;</div>
+            <div class="col-sm-1"></div>
+            <div class="col-sm-1 "></div>
+            <div class="col-sm-1 "></div>
+            <div class="col-sm-1 "></div>
+            <div class="col-sm-1 "></div>
+            <div class="col-sm-1 "></div>
+            <div class="col-sm-1 "></div>
+            <div class="col-sm-1 "></div>
+            <div id="player2_card7" class="col-sm-1 playerCard"></div>
+            <div id="player2_card8" class="col-sm-1 playerCard"></div>
+          </div>
+          <div class="row">
+            <div id="player4_card9" class="col-sm-1 playerCard">1</div>
+            <div id="player4_card10" class="col-sm-1 playerCard">2 &heartsuit;</div>
+            <div class="col-sm-1"></div>
+            <div class="col-sm-1 "></div>
+            <div class="col-sm-1 "></div>
+            <div class="col-sm-1 "></div>
+            <div class="col-sm-1 "></div>
+            <div class="col-sm-1 "></div>
+            <div class="col-sm-1 "></div>
+            <div class="col-sm-1 "></div>
+            <div id="player2_card9" class="col-sm-1 playerCard"></div>
+            <div id="player2_card10" class="col-sm-1 playerCard"></div>
+          </div>
+          <div class="row">
+            <div id="player4_card11" class="col-sm-1 playerCard">1</div>
+            <div id="player4_card12" class="col-sm-1 playerCard">2 &heartsuit;</div>
+            <div class="col-sm-1"></div>
+            <div class="col-sm-1 "></div>
+            <div class="col-sm-1 "></div>
+            <div class="col-sm-1 "></div>
+            <div class="col-sm-1 "></div>
+            <div class="col-sm-1 "></div>
+            <div class="col-sm-1 "></div>
+            <div class="col-sm-1 "></div>
+            <div id="player2_card11" class="col-sm-1 playerCard"></div>
+            <div id="player2_card12" class="col-sm-1 playerCard"></div>
+          </div>
+        <div class="row" style="height:30px;">
+            <div class="col-sm-12" style="background-color:yellow"></div>
+        </div>
+          <div class="row">
+            <div id="player3_card1" class="col-sm-1 playerCard"></div>
+            <div id="player3_card2" class="col-sm-1 playerCard"></div>
+            <div id="player3_card3" class="col-sm-1 playerCard"></div>
+            <div id="player3_card4" class="col-sm-1 playerCard"></div>
+            <div id="player3_card5" class="col-sm-1 playerCard"></div>
+            <div id="player3_card6" class="col-sm-1 playerCard"></div>
+            <div id="player3_card7" class="col-sm-1 playerCard"></div>
+            <div id="player3_card8" class="col-sm-1 playerCard"></div>
+            <div id="player3_card9" class="col-sm-1 playerCard"></div>
+            <div id="player3_card10" class="col-sm-1 playerCard"></div>
+            <div id="player3_card11" class="col-sm-1 playerCard"></div>
+            <div id="player3_card12" class="col-sm-1 playerCard"></div>
+          </div>
+        </div>
+    </div>
+
+</div>
 
 <div>
 <script src="client/js/home.js"></script>
