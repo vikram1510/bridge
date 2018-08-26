@@ -208,14 +208,14 @@ io.sockets.on('connection', function(socket) {
 
 				var dataPack = {
 					connected : true,
-					myCards: player.playerCards
 				};
 
 				socket.emit('signInResponse',dataPack);
 
 				PlayerList[socket.id] = player;
 				if (Object.keys(PlayerList).length == 4) {
-					socket.emit('readyToPlay',{ready : true})
+					socket.emit('readyToPlay',{ready : true,
+					myCards: player.playerCards})
 				}
 			} else {
 				console.log(data.teamname + " is full: " + Object.keys(teamList[data.teamname].players).length + "/2");
@@ -243,5 +243,6 @@ io.sockets.on('connection', function(socket) {
 			}
 		},10000); //Reduced timeout for faster debugging - Return to 10000 later
 	});
-
 });
+
+

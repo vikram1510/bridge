@@ -7,6 +7,24 @@
 //
 
 
+var states = {
+    wait: false,
+    middleSelect: false,
+    trumpSelect: false,
+    gameMode: false,
+    finishGame: false,
+}
+var waitMsg='';
+
+
+var wait = {
+    status:  false,
+    message: ''
+}
+var middle
+
+
+
 var ready = false;
 var socket = io.connect();
 
@@ -72,6 +90,14 @@ playernameField.oninput = function(e) {
   console.log(name);
 };
 
+setState = function(state){
+
+
+
+
+}
+
+
 setupDeck = function(inputcards) {
 
   if(windowWidth > 900 && windowHeight > 300)   {
@@ -117,16 +143,16 @@ playButtonClicked = function(){
         signInPage.style.display = 'none';
         // gamePage.style.display = '';
         createCanvas(windowWidth,windowHeight);
-        inputcards = data.myCards;
-        setupDeck(inputcards);
-        ready = true;
+
       } else {
         console.log("Can not connect");
       }
   })
 
-  socket.on('someone', function(data) {
-    console.log("Somoene played a card");
+  socket.on('readyToPlay', function(data) {
+        inputcards = data.myCards;
+        setupDeck(inputcards);
+        ready = true;
   })
 
 }
@@ -248,9 +274,5 @@ function mouseClicked() {
 
         c--;
   }
-
-
-
-
 
 }
