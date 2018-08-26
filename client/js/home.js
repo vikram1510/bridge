@@ -52,8 +52,8 @@ function preload() {
       cardimgarray[suit + number] = tempImg;
     }
 
-    cardimgarray['redjoker14'] = loadImage('client/assets/cardredjoker14.png');
-    cardimgarray['blackjoker14'] = loadImage('client/assets/cardblackjoker14.png');
+    cardimgarray['trump53'] = loadImage('client/assets/cardtrump53.png'); // Small Joker
+    cardimgarray['trump54'] = loadImage('client/assets/cardtrump54.png'); // Big Joker
 
 
   }
@@ -126,15 +126,15 @@ function setup() {
             signInPage.style.display = 'none';
             // gamePage.style.display = '';
             createCanvas(windowWidth,windowHeight);
-
+            inputcards = data.myCards;
+            setupDeck(inputcards);
           } else {
             console.log("Can not connect");
           }
       })
 
       socket.on('readyToPlay', function(data) {
-            inputcards = data.myCards;
-            setupDeck(inputcards);
+          console.log("Ready to play");
             ready = true;
       })
 

@@ -31,16 +31,25 @@ var Card = function(suit,number) {
 
 		this.suit = suit;
 		this.number = number;
+		this.name = number + suit;
 		this.played = false;
 		this.selected = false;
 		this.chosen = false
+		this.rank = null;
 
-	if (suit == "spadesuit" || suit == "clubsuit"  ||  suit == "blackjoker") {
+	if (suit == "spadesuit" || suit == "clubsuit") {
     this.color = "black";
-  } else if (suit == "heartsuit" || suit == "diamondsuit" ||  suit == "redjoker") {
+  } else if (suit == "heartsuit" || suit == "diamondsuit") {
     this.color = "red";
-  } else
-    this.color = "notset";
+  } else if (suit == "trump") {
+		if (number == 53) {
+			this.color = "red";
+		} else if (number == 54) {
+			this.color = "red";
+		}
+	} else {
+    this.color = null;
+	}
 
 	return this;
 }
@@ -48,17 +57,17 @@ var Card = function(suit,number) {
 var CardsManager = function() {
 
 	this.cardDeck = [];
-	var suitsArray = ['heartsuit','spadesuit','diamondsuit','clubsuit'];
+	var suitsArray = ['heartsuit','spadesuit','diamondsuit','clubsuit', 'trump'];
 
-	for (var i in suitsArray) {
+	for (var i = 0; i <= 3; i++) {
 
 	    for (var j = 1; j <= 13; j++) {
 	      this.cardDeck.push(new Card(suitsArray[i], j));
 	    };
 
   };
-  this.cardDeck.push(new Card('redjoker',14));
-  this.cardDeck.push(new Card('blackjoker',14));
+  this.cardDeck.push(new Card('trump',53)); // Small Joker
+  this.cardDeck.push(new Card('trump',54)); // Big Joker
 
 	this.shuffle = function() {
 		let counter = this.cardDeck.length;
@@ -107,9 +116,16 @@ var CardsManager = function() {
 	// n is number of cards to give
 	this.giveCards = function(n) {
 
-		// console.log("Before giving " + this.cardDeck.length);
+		console.log("Before giving " + this.cardDeck.length);
+
+
 		var cardArray = this.cardDeck.splice(0,n);
-		// console.log("After giving " + this.cardDeck.length);
+		console.log("After giving " + this.cardDeck.length);
+
+		// for (var i in this.cardDeck) {
+		// 	console.log("A" + this.cardDeck[i].suit + " " + this.cardDeck[i].number);
+		// }
+
 		return cardArray;
 	}
 
@@ -199,23 +215,27 @@ io.sockets.on('connection', function(socket) {
 
 			if(teamList[data.teamname].canAddPlayer()) {
 
-
 				console.log(data.name + " added to " + data.teamname);
 				var player = new Player(socket.id);
 
 				player.name = data.name;
 				teamList[data.teamname].addPlayer(player);
 
+				for (var i in player.playerCards) {
+					console.log((i+1) + " " + player.playerCards[i].suit + " " + player.playerCards[i].number);
+				}
+
 				var dataPack = {
 					connected : true,
+					myCards: player.playerCards
 				};
 
 				socket.emit('signInResponse',dataPack);
 
 				PlayerList[socket.id] = player;
+
 				if (Object.keys(PlayerList).length == 4) {
-					socket.emit('readyToPlay',{ready : true,
-					myCards: player.playerCards})
+						io.sockets.emit('readyToPlay',{ready : true,})
 				}
 			} else {
 				console.log(data.teamname + " is full: " + Object.keys(teamList[data.teamname].players).length + "/2");
@@ -245,4 +265,26 @@ io.sockets.on('connection', function(socket) {
 	});
 });
 
+setInterval(function() {
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+},1000);
