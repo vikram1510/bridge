@@ -214,7 +214,7 @@ io.sockets.on('connection', function(socket) {
 				socket.emit('signInResponse',dataPack);
 
 				PlayerList[socket.id] = player;
-				if (Object.keys(PlayerList).length > 4) {
+				if (Object.keys(PlayerList).length == 4) {
 					socket.emit('readyToPlay',{ready : true})
 				}
 			} else {
@@ -243,13 +243,5 @@ io.sockets.on('connection', function(socket) {
 			}
 		},3000); //Reduced timeout for faster debugging - Return to 10000 later
 	});
-
-	socket.on('chosencards', function(data) {
-
-			console.log("Card selected: " + data );
-			socket.broadcast.emit('someone',data);
-
-
-	})
 
 });
