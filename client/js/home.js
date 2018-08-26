@@ -8,9 +8,6 @@
 
 
 var ready = false;
-var keeplogging = true;
-
-
 var socket = io.connect();
 
 // div elements
@@ -37,7 +34,6 @@ var cardSelected = false;
 var cardimgarray = {};
 
 function preload() {
-
 
   var defaultpath = 'client/assets/card';
   var filetype = '.png'
@@ -150,16 +146,14 @@ function draw() {
 
 if (ready == true) {
 background(24, 141, 74)
-fill(255);
 
 var c = 12;
 for(var i in inputcards) {
 
     // MOUSEOVER Detection
     if(mouseY > inputcards[c].yPos &&  mouseX > inputcards[c].xPos &&
-       mouseX < inputcards[c].xPos + cardWidth && cardSelected == false) { // Mouse is between input card and no other cards selected
+       mouseX < inputcards[c].xPos + cardWidth) { // Mouse is between input card and no other cards selected
 
-        cardSelected = true;
         inputcards[c].selected = true;
 
         if(inputcards[c].yPos > deckStartY-60 && inputcards[c].selected) { // Bring up card position
@@ -167,7 +161,6 @@ for(var i in inputcards) {
         }
     } else {
       inputcards[c].selected = false;
-      cardSelected = false;
     }
 
 
@@ -245,7 +238,6 @@ function mouseClicked() {
      } else if (inputcards[c].selected) {
       inputcards[c].chosen = true;
       inputcards[c].selected = false;
-      cardSelected = false;
       console.log("Chosen: " + inputcards[c].suit + inputcards[c].number);
       chosencards.push(inputcards[c]);
 

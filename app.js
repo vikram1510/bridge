@@ -48,14 +48,14 @@ var Card = function(suit,number) {
 var CardsManager = function() {
 
 	this.cardDeck = [];
-	var suitsArray = ['heartsuit','spadesuit','diamondsuit','clubsuit','blackjoker','redjoker'];
+	var suitsArray = ['heartsuit','spadesuit','diamondsuit','clubsuit'];
 
 	for (var i in suitsArray) {
-		if (i <= 3) {
+
 	    for (var j = 1; j <= 13; j++) {
 	      this.cardDeck.push(new Card(suitsArray[i], j));
 	    };
-		}
+
   };
   this.cardDeck.push(new Card('redjoker',14));
   this.cardDeck.push(new Card('blackjoker',14));
@@ -129,7 +129,7 @@ var CardsManager = function() {
 	return this;
 }
 
-var Player = function(id,cardsmanager) {
+var Player = function(id) {
 
 	this.id = id,
 	this.name =  null
@@ -199,14 +199,14 @@ io.sockets.on('connection', function(socket) {
 
 			if(teamList[data.teamname].canAddPlayer()) {
 
-				var dataPack = [];
+
 				console.log(data.name + " added to " + data.teamname);
-				var player = new Player(socket.id, cardsmanager);
+				var player = new Player(socket.id);
 
 				player.name = data.name;
 				teamList[data.teamname].addPlayer(player);
 
-				dataPack = {
+				var dataPack = {
 					connected : true,
 					myCards: player.playerCards
 				};
@@ -241,7 +241,7 @@ io.sockets.on('connection', function(socket) {
 				}
 				delete SocketList[socket.id];
 			}
-		},3000); //Reduced timeout for faster debugging - Return to 10000 later
+		},10000); //Reduced timeout for faster debugging - Return to 10000 later
 	});
 
 });
